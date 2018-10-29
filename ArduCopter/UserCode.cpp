@@ -11,8 +11,8 @@ const int N_imet = 4;   //supports up to 4
 float volt[4], curr[4];
 
 //Fan control params
-uint16_t fan_pwm_on = 1205;
-uint16_t fan_pwm_off = 800;
+uint16_t fan_pwm_on = 20;
+uint16_t fan_pwm_off = 0;
 
 //Wind estimator Params
 const int N = 60;               //filter order
@@ -181,10 +181,19 @@ void Copter::userhook_SuperSlowLoop()
     copter.ahrs.get_relative_position_D_home(alt);
     alt = -1.0f*alt;
 
+    uint32_t tnow = AP_HAL::millis();
     //Fan Control    
-    if(hal.util->safety_switch_state() == AP_HAL::Util::SAFETY_DISARMED){
+    if(tnow < 12000){
         SRV_Channels::set_output_pwm(SRV_Channel::k_egg_drop, fan_pwm_off);
+        //printf("Fan OFF");
     }
+    else{
+        SRV_Channels::set_output_pwm(SRV_Channel::k_egg_drop, fan_pwm_on);
+        //printf("Fan ON");
+    }
+    // if(hal.util->safety_switch_state() == AP_HAL::Util::SAFETY_DISARMED){
+    //     SRV_Channels::set_output_pwm(SRV_Channel::k_egg_drop, fan_pwm_off);
+    // }
     // else{
     //     if(alt > 1.8f){
     //         SRV_Channels::set_output_pwm(SRV_Channel::k_egg_drop, fan_pwm_on);
@@ -198,14 +207,14 @@ void Copter::userhook_SuperSlowLoop()
 
     //Start estimation after Copter took off
     if(!ap.land_complete){ // !arming.is_armed()        
-        if(alt > 1.8f){
-            SRV_Channels::set_output_pwm(SRV_Channel::k_egg_drop, fan_pwm_on);
-        }
-        else{
-            if(alt < 1.6f){
-                SRV_Channels::set_output_pwm(SRV_Channel::k_egg_drop, fan_pwm_off);
-            }
-        }
+        // if(alt > 1.8f){
+        //     SRV_Channels::set_output_pwm(SRV_Channel::k_egg_drop, fan_pwm_on);
+        // }
+        // else{
+        //     if(alt < 1.6f){
+        //         SRV_Channels::set_output_pwm(SRV_Channel::k_egg_drop, fan_pwm_off);
+        //     }
+        // }
 
         if(alt > 2.0f){
             float aux, A=0.0f; //Total area exposed to wind and aux variable
