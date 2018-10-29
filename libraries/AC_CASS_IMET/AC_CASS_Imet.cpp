@@ -37,7 +37,7 @@ bool AC_CASS_Imet::init()
              ADS1015_REG_CONFIG_OS_SINGLE;     // Set start single-conversion bit
 
     // Bus 0 is for Pixhawk 2.1 I2C and Bus 1 is for Pixhawk 1 and PixRacer I2C
-    _dev = std::move(hal.i2c_mgr->get_device(0, IMET_DEFAULT_ADDR));
+    _dev = std::move(hal.i2c_mgr->get_device(1, IMET_DEFAULT_ADDR));
     if (!_dev) {
         printf("IMET device is null!");
         return false;
