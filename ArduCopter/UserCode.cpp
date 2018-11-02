@@ -184,27 +184,16 @@ void Copter::userhook_SuperSlowLoop()
     alt = -1.0f*alt;
 
     //Fan Control    
-    if(hal.util->safety_switch_state() == AP_HAL::Util::SAFETY_DISARMED){
+    if(AP_HAL::millis() > 12000){
+        SRV_Channels::set_output_pwm(SRV_Channel::k_egg_drop, fan_pwm_on);
+    }
+    else{
         SRV_Channels::set_output_pwm(SRV_Channel::k_egg_drop, fan_pwm_off);
         flag_fan_on = false;
     }
 
     //Start estimation after Copter took off
-    if(!ap.land_complete){ // !arming.is_armed()
-        // FAN control. Turn on/off at given heights
-        if(alt > 1.8f && flag_fan_on == false){
-            SRV_Channels::set_output_pwm(SRV_Channel::k_egg_drop, fan_pwm_on);
-        }
-        if(alt > 5.0f && flag_fan_on == false){
-            flag_fan_on = true;
-        }
-        if(alt < 3.0f && flag_fan_on == true){
-            SRV_Channels::set_output_pwm(SRV_Channel::k_egg_drop, fan_pwm_off);
-        }
-        if(alt < 1.0f && flag_fan_on == true){
-            flag_fan_on == false;
-        }
-
+    if(!ap.land_complete){ // !arming.is_armed()        
         if(alt > 2.0f){
             float aux, A=0.0f; //Total area exposed to wind and aux variable
 
