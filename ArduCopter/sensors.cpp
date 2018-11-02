@@ -25,26 +25,26 @@ void Copter::init_CASS_imet(){
     // coeff[3][1] = 1.0;
     // coeff[3][2] = 1.0;
     
-    //CS2.5 TONYSONDE SENSORS
-    //IMET temp number 57562:
-    coeff[0][0] = 1.02777010e-03f;
-    coeff[0][1] = 2.59349232e-04f;
-    coeff[0][2] = 1.56043078e-07f;
+    // //CS2.5 TONYSONDE SENSORS
+    // //IMET temp number 57562:
+    // coeff[0][0] = 1.02777010e-03f;
+    // coeff[0][1] = 2.59349232e-04f;
+    // coeff[0][2] = 1.56043078e-07f;
 
-    //IMET temp number 57563:
-    coeff[1][0] = 9.91077399e-04f;
-    coeff[1][1] = 2.64646362e-04f;
-    coeff[1][2] = 1.43596294e-07f;
+    // //IMET temp number 57563:
+    // coeff[1][0] = 9.91077399e-04f;
+    // coeff[1][1] = 2.64646362e-04f;
+    // coeff[1][2] = 1.43596294e-07f;
 
-    //IMET temp number 58821:
-    coeff[2][0] = 1.00786813e-03f;
-    coeff[2][1] = 2.61722397e-04f;
-    coeff[2][2] = 1.48476183e-07f;
+    // //IMET temp number 58821:
+    // coeff[2][0] = 1.00786813e-03f;
+    // coeff[2][1] = 2.61722397e-04f;
+    // coeff[2][2] = 1.48476183e-07f;
 
-    //IMET temp number none:
-    coeff[3][0] = 1.0;
-    coeff[3][1] = 1.0;
-    coeff[3][2] = 1.0;
+    // //IMET temp number none:
+    // coeff[3][0] = 1.0;
+    // coeff[3][1] = 1.0;
+    // coeff[3][2] = 1.0;
 
     // //CS2.5 CHRISSONDE SENSORS
     // //IMET temp number 57549:
@@ -92,6 +92,27 @@ void Copter::init_CASS_imet(){
     // coeff[3][0] = 1.0;
     // coeff[3][1] = 1.0;
     // coeff[3][2] = 1.0;
+
+    //TonyShark Temp in tubes
+    //IMET temp number 57548:
+    coeff[0][0] = 1.01915700e-03f;
+    coeff[0][1] = 2.60778724e-04f;
+    coeff[0][2] = 1.52381873e-07f;
+
+    //IMET temp number 56237:
+    coeff[1][0] = 1.00379726e-03f;
+    coeff[1][1] = 2.62770143e-04f;
+    coeff[1][2] = 1.48291724e-07f;
+
+    //IMET temp number 56239:
+    coeff[2][0] = 9.99173098e-04f;
+    coeff[2][1] = 2.63582305e-04f;
+    coeff[2][2] = 1.46930574e-07f;
+
+    //IMET temp number none:
+    coeff[3][0] = 1.0;
+    coeff[3][1] = 1.0;
+    coeff[3][2] = 1.0;
 
     // //RED COPTERSONDE SENSORS
     // //IMET temp number 48623:
