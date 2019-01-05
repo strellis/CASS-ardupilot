@@ -46,31 +46,31 @@ void Copter::init_CASS_imet(){
     // coeff[3][1] = 1.0;
     // coeff[3][2] = 1.0;
 
-    // //CS2.5 CHRISSONDE SENSORS
-    // //IMET temp number 57549:
-    // coeff[0][0] = 1.01991700e-03f;
-    // coeff[0][1] = 2.60780405e-04f;
-    // coeff[0][2] = 1.52712244e-07f;
+    //CS2.5 CHRISSONDE SENSORS
+    //IMET temp number 57549:
+    coeff[0][0] = 1.01991700e-03f;
+    coeff[0][1] = 2.60780405e-04f;
+    coeff[0][2] = 1.52712244e-07f;
 
-    // //IMET temp number 58814:
-    // coeff[1][0] = 1.01248342e-03f;
-    // coeff[1][1] = 2.61214144e-04f;
-    // coeff[1][2] = 1.50257257e-07f;
+    //IMET temp number 58814:
+    coeff[1][0] = 1.01248342e-03f;
+    coeff[1][1] = 2.61214144e-04f;
+    coeff[1][2] = 1.50257257e-07f;
 
-    // //IMET temp number 57556:
-    // coeff[2][0] = 1.01819012e-03f;
-    // coeff[2][1] = 2.60580910e-04f;
-    // coeff[2][2] = 1.52793158e-07f;
+    //IMET temp number 57556:
+    coeff[2][0] = 1.01819012e-03f;
+    coeff[2][1] = 2.60580910e-04f;
+    coeff[2][2] = 1.52793158e-07f;
 
     // //IMET temp number 58822:
     // coeff[2][0] = 1.00761568e-03f;
     // coeff[2][1] = 2.61899525e-04f;
     // coeff[2][2] = 1.49075281e-07f;
 
-    // //IMET temp number none:
-    // coeff[3][0] = 1.0;
-    // coeff[3][1] = 1.0;
-    // coeff[3][2] = 1.0;
+    //IMET temp number none:
+    coeff[3][0] = 1.0;
+    coeff[3][1] = 1.0;
+    coeff[3][2] = 1.0;
 
     // //CS2.5 DEREKSONDE SENSORS
     // //IMET temp number 57555:
@@ -92,27 +92,6 @@ void Copter::init_CASS_imet(){
     // coeff[3][0] = 1.0;
     // coeff[3][1] = 1.0;
     // coeff[3][2] = 1.0;
-
-    //TonyShark Temp in tubes
-    //IMET temp number 57548:
-    coeff[0][0] = 1.01915700e-03f;
-    coeff[0][1] = 2.60778724e-04f;
-    coeff[0][2] = 1.52381873e-07f;
-
-    //IMET temp number 56237:
-    coeff[1][0] = 1.00379726e-03f;
-    coeff[1][1] = 2.62770143e-04f;
-    coeff[1][2] = 1.48291724e-07f;
-
-    //IMET temp number 56239:
-    coeff[2][0] = 9.99173098e-04f;
-    coeff[2][1] = 2.63582305e-04f;
-    coeff[2][2] = 1.46930574e-07f;
-
-    //IMET temp number none:
-    coeff[3][0] = 1.0;
-    coeff[3][1] = 1.0;
-    coeff[3][2] = 1.0;
 
     // //RED COPTERSONDE SENSORS
     // //IMET temp number 48623:

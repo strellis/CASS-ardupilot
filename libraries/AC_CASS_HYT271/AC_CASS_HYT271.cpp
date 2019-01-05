@@ -20,13 +20,7 @@ bool AC_CASS_HYT271::init()
     sem = hal.util->new_semaphore();
 
     // Bus 0 is for Pixhawk 2.1 I2C and Bus 1 is for Pixhawk 1 and PixRacer I2C
-    #if CONFIG_HAL_BOARD_SUBTYPE == HAL_BOARD_SUBTYPE_PX4_V4
-        _dev = std::move(hal.i2c_mgr->get_device(1, HYT271_DEFAULT_ADDR));
-    #elseif CONFIG_HAL_BOARD_SUBTYPE == HAL_BOARD_SUBTYPE_FMU_V4
-        _dev = std::move(hal.i2c_mgr->get_device(1, HYT271_DEFAULT_ADDR));
-    #else
-        _dev = std::move(hal.i2c_mgr->get_device(0, HYT271_DEFAULT_ADDR));
-    #endif
+    _dev = std::move(hal.i2c_mgr->get_device(1, HYT271_DEFAULT_ADDR));
     if (!_dev) {
         printf("HYT271 device is null!");
         return false;

@@ -184,7 +184,7 @@ void Copter::userhook_SuperSlowLoop()
     alt = -1.0f*alt;
 
     //Fan Control    
-    if(AP_HAL::millis() > 12000){
+    if(AP_HAL::millis() > 18000){
         SRV_Channels::set_output_pwm(SRV_Channel::k_egg_drop, fan_pwm_on);
     }
     else{
