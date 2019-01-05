@@ -93,6 +93,27 @@ void Copter::init_CASS_imet(){
     // coeff[3][1] = 1.0;
     // coeff[3][2] = 1.0;
 
+    //TonyShark Temp in tubes
+    //IMET temp number 57548:
+    coeff[0][0] = 1.01915700e-03f;
+    coeff[0][1] = 2.60778724e-04f;
+    coeff[0][2] = 1.52381873e-07f;
+
+    //IMET temp number 56237:
+    coeff[1][0] = 1.00379726e-03f;
+    coeff[1][1] = 2.62770143e-04f;
+    coeff[1][2] = 1.48291724e-07f;
+
+    //IMET temp number 56239:
+    coeff[2][0] = 9.99173098e-04f;
+    coeff[2][1] = 2.63582305e-04f;
+    coeff[2][2] = 1.46930574e-07f;
+
+    //IMET temp number none:
+    coeff[3][0] = 1.0;
+    coeff[3][1] = 1.0;
+    coeff[3][2] = 1.0;
+
     // //RED COPTERSONDE SENSORS
     // //IMET temp number 48623:
     // coeff[0][0] = 1.00733068f * (float)pow(10, -3);
