@@ -22,7 +22,7 @@ bool AC_CASS_Imet::init()
     adc_volt = 0;
     sem = hal.util->new_semaphore();
 
-    _filtered_volt.set_cutoff_frequency(12.5, 0.3);
+    _filtered_volt.set_cutoff_frequency(12.5, 0.2);
 
     for(uint8_t i=0; i<3; i++){
         memset(coeff,1.0,sizeof(coeff));
