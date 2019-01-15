@@ -86,6 +86,7 @@
 #include <AP_HAL/I2CDevice.h>
 #include <AP_HAL/utility/sparse-endian.h>
 #include <AP_Vehicle/AP_Vehicle.h>
+#include <Filter/LowPassFilter.h>
 
 #define IMET_DEFAULT_ADDR 0x48
 
@@ -111,6 +112,7 @@ private:
     float _volt; //voltage read by the ADC
     bool _healthy; // we have a valid temperature reading to report
     uint16_t config;
+    LowPassFilterFloat _filtered_volt;
     bool _config_read_curr(void); // reset device
     bool _config_read_volt(void); // read (relevant) internal calibration registers into _k
     float _read_adc(void);
