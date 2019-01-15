@@ -22,11 +22,11 @@ bool AC_CASS_Imet::init()
     adc_volt = 0;
     sem = hal.util->new_semaphore();
 
-    _filtered_volt.set_cutoff_frequency(12.5, 0.2);
-
     for(uint8_t i=0; i<3; i++){
         memset(coeff,1.0,sizeof(coeff));
     }
+
+    _filtered_volt.set_cutoff_frequency(12.5,0.2);
     
     config = ADS1015_REG_CONFIG_CQUE_NONE    | // Disable the comparator (default val)
              ADS1015_REG_CONFIG_CLAT_NONLAT  | // Non-latching (default val)
